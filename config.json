@@ -1,0 +1,65 @@
+{
+	"train": [
+		["Multitop_nom", "OtherMultiboson_nom", "TTbarSgTop_nom", "ttH_nom", "ttW_nom","ttZ_nom"],["Vjets_nom","WZ_nom"], ["Nom_low"]
+	],
+	"prediction": [
+	     "Nom_low","Nom_mid","Nom_high","data_nom",
+		"Multitop_nom", "OtherMultiboson_nom", "TTbarSgTop_nom", "ttH_nom", "ttW_nom","ttZ_nom","Vjets_nom","WZ_nom"
+         ,"signal505945_nom","signal505946_nom","signal505947_nom","signal505948_nom","signal505949_nom"
+		,"signal505950_nom","signal505951_nom","signal505952_nom","signal505953_nom","signal505954_nom","signal505955_nom","signal505956_nom","signal505957_nom","signal505958_nom"
+		,"signal505959_nom","signal505960_nom","signal505961_nom","signal505962_nom","signal505963_nom","signal505964_nom","signal505965_nom","signal505966_nom"
+		,"signal505967_nom","signal505968_nom","signal505969_nom","signal505970_nom","signal505971_nom"	,"signal505972_nom","signal505973_nom","signal505974_nom","signal505975_nom"
+		,"signal505976_nom","signal505977_nom","signal505978_nom","signal505979_nom","signal505980_nom","signal505981_nom","signal505982_nom","signal505983_nom"
+		,"signal505984_nom","signal505985_nom","signal505986_nom","signal505987_nom","signal505988_nom","signal505989_nom","signal505990_nom","signal505991_nom","signal505992_nom"
+		,"signal505993_nom","signal505994_nom","signal505995_nom","signal505996_nom","signal505997_nom","signal505998_nom","signal505999_nom","signal506000_nom","signal506001_nom"
+		,"signal506002_nom"	,"signal506003_nom","signal506004_nom","signal506005_nom","signal506006_nom","signal506007_nom","signal506008_nom","signal506009_nom","signal506010_nom"
+		,"signal506011_nom","signal506012_nom","signal506013_nom","signal506014_nom","signal506015_nom","signal506016_nom","signal506017_nom","signal506018_nom","signal506019_nom"
+		,"signal506020_nom","signal506021_nom","signal506022_nom","signal506023_nom","signal506024_nom","signal506025_nom","signal506026_nom","signal506027_nom","signal506028_nom"
+		,"signal506029_nom","signal506030_nom","signal506031_nom","signal506032_nom","signal506033_nom","signal506034_nom","signal506035_nom","signal506036_nom","signal506037_nom"
+		,"signal506038_nom","signal506039_nom","signal506040_nom","signal506041_nom","signal506042_nom","signal506043_nom","signal506044_nom","signal506045_nom","signal506046_nom"
+		,"signal506047_nom","signal506048_nom","signal506049_nom","signal506050_nom","signal506051_nom","signal506052_nom","signal506053_nom","signal506054_nom","signal506055_nom"
+		,"signal506056_nom","signal506057_nom","signal506058_nom","signal506059_nom","signal506060_nom","signal506061_nom","signal506062_nom","signal506063_nom","signal506064_nom"
+		,"signal506065_nom","signal506066_nom","signal506067_nom","signal506068_nom","signal506069_nom","signal506070_nom","signal506071_nom","signal506072_nom","signal506073_nom"
+	    ],
+	"out_branch": "lightgbm_low",
+	"variables":["Zevent","sumPtLep","met","meff","Pt_subl","Pt_l","ht","mt2_N2","mt2","mt2_G"],
+	"totweight":"totweight",
+	"lumiScaling":"lumiScaling",
+	"largestAllowWei":10,
+	"lightgbm":{
+		"objective": "multiclass",
+		"metric": "multi_logloss",
+		"boost_from_average": false,
+		"num_threads": -1,
+		"learning_rate": 0.01,
+		"num_iterations": 1000,
+		"num_leaves":30, 
+		"early_stopping_rounds": 20,
+		"max_depth":6,
+		"lambda_l1": 0.001,
+		"feature_fraction": 0.8,
+		"bagging_freq": 5,
+		"bagging_fraction": 0.8,
+		"min_data_inuleaf": 30,
+		"min_sum_hessian_in_leaf": 10.0,
+		"verbosity": 1,
+		"seed": 369
+	},
+	"xgboost":{
+		"objective": "multiclass",
+		"metric": "multi_logloss",
+		"boost_from_average": false,
+		"num_threads": 8,
+		"learning_rate": 0.0081,
+		"num_iterations": 9999,
+		"num_leaves": 20,
+		"max_depth": -1,
+		"feature_fraction": 0.041,
+		"bagging_freq": 3,
+		"bagging_fraction": 0.4,
+		"min_data_in_leaf": 80,
+		"min_sum_hessian_in_leaf": 10.0,
+		"verbosity": 1,
+		"seed": 369
+	}
+}
